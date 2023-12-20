@@ -65,7 +65,30 @@ namespace Test01_Hello
     }
     class Test01 // main class
     {
-        public void Func1()
+        delegate void cbTest();
+        void f1 ()
+        {
+            WriteLine("delegate Test01");
+        }
+        void f2()
+        {
+            WriteLine("delegate Test02");
+        }
+        void f3()
+        {
+            WriteLine("delegate Test03");
+        }
+        void Func_DelegateTest()
+        {
+            cbTest cb1;
+            cb1 = new cbTest(f1);
+            cb1();
+            cb1 = new cbTest(f2);
+            cb1();
+            cb1 = new cbTest(f3);
+            cb1();
+        }
+        public void Func_PointTest()
         {
             Point p = new Point(10, 20);
             Point p1 = new Point(30, 40);
@@ -75,9 +98,8 @@ namespace Test01_Hello
             string s2 = "morning";
             string s3 = s1 + s2;
         }
-        public void MainFunc()
+        public void Func_ReadWrite()
         {
-            Func1();
             int i = 10, j = 20;
             double d = 1.5, e = 3.1;
             object o = i + 1;
@@ -91,10 +113,6 @@ namespace Test01_Hello
 
             int[] arr = new int[i];
             for (int i1 = 0; i1 < 10; i1++) arr[i1] = i1;
-
-            //myLib my = new myLib();
-
-            return;
 
             while (true)
             {
@@ -116,12 +134,122 @@ namespace Test01_Hello
                     string st1 = $"STX{i,5}ETX";
                     WriteLine(str);
                     Console.WriteLine(st1);*/
-                 }
+                }
                 catch (Exception e1)
                 {
-                    WriteLine(e1.Message);
+                    WriteLine(e1.Message); //Point Test
                 }
             }
+        }
+        int ArrSum(int[] arr) //int 배열 요소의 합을 구하는 범용 함수
+        {
+            int sum = 0;
+            for (int i = 0; i < arr.Length; i++)
+                sum += arr[i];
+            return sum;
+        }
+        T ArrSum<T>(T[] arr) //int 배열 요소의 합을 구하는 범용 함수
+        {
+            T sum = (dynamic)0;
+            foreach (T a in arr)
+                sum += (dynamic)a;
+            return sum;
+        }
+        void PrinArr<T>(T[] arr)
+        {
+            int i = 0;
+            foreach (T a in arr)
+            {
+                Write($"[]{a} ");
+            }
+        }
+        void InitArr(out int[] arr, int n)
+        {
+            arr = new int[n];
+            for (int i = 0; i < 10 ;i++) arr[i] = 0;
+        }
+        void CallArr(int[] arr)
+        {
+            arr[2] = 100;
+            arr[4] = 200;
+        }
+        public void Func_ArrayTest()
+        {
+            string s1 = "Good ";
+            string s2 = "morning";
+
+            int[] arr; // = new int[10]; //1D array
+            int[] arr1 = { 0, 1, 2, 3, 4 };
+            double[] drr = { 0.1, 1.2, 2.3, 3.4, 4.5 };
+            Point[] parr = new Point[10];
+            int[,] brr = { { 10, 11, 12, 13, 14 }, { 20, 21, 22, 23, 24 } }; //2D array
+            int[][] crr = //포인터
+             {
+                    new int[] { 10,11,12,13,14 },   
+                    new int[] { 20,21,22,23,24,25,26 }
+            };
+
+            //c#에서는 memcpy, ctrcpy 같은 저등급 함수 사용 불가(c에서는 가능)
+            InitArr(out arr, 10);
+            for(int i=0; i<2; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    Write($"brr[{i},{j}]:{brr[i,j]} ");
+                }
+                WriteLine("");     //개행발생
+            }
+
+            crr[0].CopyTo(arr, 0);
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    Write($"brr[{i},{j}]:{brr[i, j]} ");
+                }
+                WriteLine("");
+            }
+
+            CallArr(arr);
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 5; j++)
+                {
+                    Write($"brr[{i},{j}]:{brr[i, j]} ");
+                }
+                WriteLine("");
+            }
+
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < crr[i].Length; j++)
+                {
+                    Write($"crr[{i},{j}]:{crr[i][j]} ");
+                }
+                WriteLine("");
+            }
+
+            Array.Copy(crr[0], arr, 5);
+
+            WriteLine($"Sum of [arr] : {ArrSum(arr)}");
+            WriteLine($"Sum of [drr] : {ArrSum(drr)}");
+            //int[] arr2 = arr + arr1; //ERROR
+            arr.Append<int>(1);
+            WriteLine(s1 + s2);
+            WriteLine($"Length of [arr] : {arr.Length}");
+        }
+        public void MainFunc()
+        {
+            //Func_PointTest(); return;
+            //Func_ReadWrite();
+            //Func_ArrayTest();
+            Func_DelegateTest();
+
+
+
+            return;
+
+            
         }
     }
 }
