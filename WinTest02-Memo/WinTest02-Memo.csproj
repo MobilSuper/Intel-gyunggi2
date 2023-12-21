@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FB234B64-97DC-4F05-A2ED-A9085D0340D1}</ProjectGuid>
+    <ProjectGuid>{8DA85AA3-AAD8-4DDF-BE22-1DE40C9A04F5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WinTest01_Base</RootNamespace>
-    <AssemblyName>WinTest01-Base</AssemblyName>
+    <RootNamespace>WinTest02_Memo</RootNamespace>
+    <AssemblyName>WinTest02-Memo</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,16 +46,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmTest.cs">
+    <Compile Include="FormMemo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTest.Designer.cs">
-      <DependentUpon>frmTest.cs</DependentUpon>
+    <Compile Include="FormMemo.Designer.cs">
+      <DependentUpon>FormMemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSearch.Designer.cs">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSnR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSnR.Designer.cs">
+      <DependentUpon>frmSnR.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmTest.resx">
-      <DependentUpon>frmTest.cs</DependentUpon>
+    <EmbeddedResource Include="FormMemo.resx">
+      <DependentUpon>FormMemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSearch.resx">
+      <DependentUpon>frmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSnR.resx">
+      <DependentUpon>frmSnR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

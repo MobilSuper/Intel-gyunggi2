@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinTest01_Base
+namespace WinTest02_Memo
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace WinTest01_Base
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTest());
+            Application.Run(new FormMemo());
         }
     }
 }
