@@ -16,3 +16,9 @@
 /WinTest01-Base/bin/Debug
 /WinTest02-Memo/bin/Debug
 /WinTest02-Memo/obj/Debug
+/WinTest01-Base/.vs
+/WinTest01-Base/obj/Release
+/WinTest02-Memo/.vs
+/WinTest03-COM/bin/Debug
+/WinTest03-COM/obj/Debug
+/WinTest02-Memo/obj/Release
