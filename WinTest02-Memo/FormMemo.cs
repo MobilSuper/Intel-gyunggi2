@@ -32,23 +32,38 @@ namespace WinTest02_Memo
 
         private void MnuFind_Click(object sender, EventArgs e)
         {
-            frmSearch frm = new frmSearch();
-            frm.ShowDialog();
-            string str = frm.tbFind.Text;
+            try
+            {
+                frmSnR frm = new frmSnR(1);
+                frm.ShowDialog();
+                string s1 = frm.tbFrom.Text;
+                tbMemo.Select(tbMemo.Text.IndexOf(s1), s1.Length);
+            }
+            catch { }
         }
 
         private void MnuFnR_Click(object sender, EventArgs e)
         {
-            frmSnR frm = new frmSnR();
-            frm.ShowDialog();
-            string s1 = frm.tbFrom.Text;
-            string s2 = frm.tbTo.Text;
-            tbMemo.Text = tbMemo.Text.Replace(s1, s2);
+            try
+            {
+                frmSnR frm = new frmSnR(0);
+                frm.ShowDialog();
+                string s1 = frm.tbFrom.Text;
+                string s2 = frm.tbTo.Text;
+                tbMemo.Text = tbMemo.Text.Replace(s1, s2);    //원판보존
+            }
+            catch { }
         }
 
         private void MnuExit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void MnuAbout_Click(object sender, EventArgs e)
+        {
+            frmAbout frm = new frmAbout();
+            frm.ShowDialog();
         }
     }
 }

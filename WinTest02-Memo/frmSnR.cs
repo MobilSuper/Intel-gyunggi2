@@ -12,9 +12,21 @@ namespace WinTest02_Memo
 {
     public partial class frmSnR : Form
     {
-        public frmSnR()
+        public frmSnR(int op)
         {
             InitializeComponent();
+            if (op == 1)
+            {
+                label2.Visible = false;
+                tbTo.Visible = false;
+                button2.Visible = false;
+            }
+            else
+            {
+                label2.Visible = true;
+                tbTo.Visible = true;
+                button2.Visible = true;
+            }
         }
     }
 }
