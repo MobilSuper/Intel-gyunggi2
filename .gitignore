@@ -25,3 +25,5 @@
 /WinTest04-DBManager/bin/Debug
 /WinTest04-DBManager/obj/Debug
 /WinTest03-COM/.vs/WinTest03-COM.csproj.dtbcache.json
+/TestDataBase.mdf
+/TestDataBase_log.ldf
