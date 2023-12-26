@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinTest02-Memo", "..\WinTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinTest03-COM", "..\WinTest03-COM\WinTest03-COM.csproj", "{7D27F2EB-A416-4CDF-AF5F-40A09410E1C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinTest04-DBManager", "..\WinTest04-DBManager\WinTest04-DBManager.csproj", "{E456C80F-3F84-4741-9334-854A4FBC8E94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7D27F2EB-A416-4CDF-AF5F-40A09410E1C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D27F2EB-A416-4CDF-AF5F-40A09410E1C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D27F2EB-A416-4CDF-AF5F-40A09410E1C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E456C80F-3F84-4741-9334-854A4FBC8E94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E456C80F-3F84-4741-9334-854A4FBC8E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E456C80F-3F84-4741-9334-854A4FBC8E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E456C80F-3F84-4741-9334-854A4FBC8E94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
